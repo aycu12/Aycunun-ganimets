@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Özüşüm'e Sürpriz 🎉</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      color: #c2185b;
+    }
+
+    h1 {
+      font-size: 2.2em;
+    }
+
+    #mesaj {
+      margin-top: 40px;
+      font-size: 1.5em;
+      color: #880e4f;
+    }
+
+    button {
+      background-color: #ec407a;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1em;
+      border-radius: 10px;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #d81b60;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="soru">Merhaba Özüşüm 💖<br>Bu link senin için hazırlandı.<br>İçindekileri görmek ister misin?</h1>
+
+  <div id="butonlar">
+    <button onclick="cevap1(true)">Evet</button>
+    <button onclick="cevap1(false)">Hayır</button>
+  </div>
+
+  <div id="mesaj"></div>
+
+  <script>
+    function cevap1(ev) {
+      if (ev) {
+        document.getElementById("soru").innerHTML = "Öncelikle sağ ol 💗<br>Ayçun'un en sevdiği kişi sensin!<br>Sana özel bir mesaj hazırladı. Görmek ister misin?";
+        document.getElementById("butonlar").innerHTML = `
+          <button onclick="cevap2(true)">Evet</button>
+          <button onclick="cevap2(false)">Hayır</button>
+        `;
+      } else {
+        document.getElementById("butonlar").innerHTML = "";
+        document.getElementById("mesaj").innerText = "Üzdün beni kral 😢";
+      }
+    }
+
+    function cevap2(ev) {
+      if (ev) {
+        document.getElementById("butonlar").innerHTML = "";
+        document.getElementById("mesaj").innerHTML = "Özüşüm balım 💖 seni çok ama çok seviyorum!<br>İyi ki varsın, iyi ki benim hayatımdasın! 🥰";
+      } else {
+        document.getElementById("butonlar").innerHTML = "";
+        document.getElementById("mesaj").innerHTML = "Başa dön 😤<br>Bir daha benimle konuşma... Küstüm!";
+      }
+    }
+  </script>
+
+</body>
+</html>
